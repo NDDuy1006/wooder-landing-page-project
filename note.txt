@@ -1,0 +1,31 @@
+xem lại slider bottom vị trí nút chuyển slide đều phải và dưới
+
+cẩn thận line-height khi kéo chuột sẽ ăn luôn line-height 
+
+
+cẩn thận chia width cứng
+
+
+
+thư viện jquery thông dụng
+!!! đặc biệt để làm slider
+
+&:hover {
+            img {
+                filter: brightness(100%) saturate(100%) contrast(63%) invert(5%);
+                -webkit-filter: brightness(75%) saturate(48%) contrast(70%) invert(5%);
+                -moz-filter: brightness(75%) saturate(48%) contrast(63%) invert(5%);
+            }
+        }
+
+
+
+        $(document).ready( function() {
+    $('.mini_slider').flickity( {
+        cellAlign: "center",
+        freeScroll: true,
+        contain: true,
+        prevNextButtons: false,
+        pageDots: false,
+    })
+})

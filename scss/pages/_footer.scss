@@ -1,0 +1,77 @@
+footer {
+    padding: 1.5rem 0;
+    background-color: $black-cl;
+    color: $light-gray-cl;
+    width: 100%;
+    .container {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .trademark {
+        @include text(12px, $pn-bold, 5rem, rgb(146, 146, 146), uppercase);
+            letter-spacing: 0.8px;
+        text-align: center;
+        // color: $light-gray-cl;
+    }
+    .footer_logo {
+        img {
+            transform: translateY(6px);
+            width: 100%;
+        }
+    }
+    .footer_right {
+        @include text(12px, $pn-bold, 5rem, rgb(146, 146, 146), uppercase);
+        letter-spacing: 0.8px;
+        cursor: pointer;
+    }
+    @include md {
+        bottom: -9rem;
+    }
+    @include sm {
+        margin-top: 5rem;
+        min-height: 5.5rem;
+        .container {
+            flex-direction: column;
+        }
+        // .trademark {
+        //     font-size: 1rem;
+
+        // }
+        .footer_logo {
+            margin: 1.5rem auto;
+        }
+        // .footer_right {
+        //     font-size: 1rem;
+        // }
+    }
+}
+
+// back to top button
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 10rem;
+    min-width: 2rem;
+    min-height: 5rem;
+    border: 2px solid $yellow-cl;
+    background-color: $yellow-cl-hover;
+    @include transition($t);
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    @include transition($t);
+    &:hover {
+        background: $yellow-cl;
+    }
+    img {
+        width: 4rem;
+        transform: translateY(10px) rotate(-90deg);
+        overflow: hidden;
+    }
+}
+.back-to-top_active {
+    opacity: 1;
+    pointer-events: auto;
+}

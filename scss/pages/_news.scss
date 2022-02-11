@@ -1,0 +1,199 @@
+//news starts
+.news {
+  padding-bottom: 9rem;
+  padding-top: 9rem;
+  .container {
+    .news_articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 12px;
+      .articles_item {
+        cursor: pointer;
+        &:hover {
+          .thumbnail {
+            img {
+              @include transform(translate(-50%, -50%) scale(1.08));
+              @include transition($t);
+              }
+            &::before {
+              background: rgba($color: #000000, $alpha: 0);
+              @include transition($t);
+            }
+          }
+          .articles_content {
+            h4 {
+              color: $yellow-cl;
+              @include transition($t);
+            }
+          }
+        }
+      }
+      .thumbnail {
+        height: 20rem;
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: rgba($color: #000000, $alpha: 0.4);
+          @include transition($t);
+          z-index: 100;
+        }
+        img {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          @include transform(translate(-50%, -50%) scale(1));
+          @include transition($t)
+        }
+      }
+    }
+    .articles_content {
+      margin-top: 5rem;
+      margin-right: 0.5rem;
+      .articles_tit {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          height: 3px;
+          width: 7rem;
+          background-color: #bea67c;
+          bottom: 46px;
+          left: 0;
+        }
+      }
+      h4 {
+        @include text(1.8rem, $pn-bold, 2.4rem, $black-cl, capitalize);
+        @include transition($t);  
+      }
+      p {
+        @include overtext(3)
+      }
+    }
+    .articles_tit {
+      height: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+  .news_textbox {
+    width: 50%;
+    h3 {
+      @include text(4rem, $pn-bold, null, $black-cl, uppercase);
+    }
+    p {
+      margin-top: 28px;
+      margin-bottom: 5rem;
+    }
+  }
+  @include md {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    .mini_slider {
+      display: none;
+    }
+  }
+  @include sm {
+    .container {
+      .news_articles {
+        .thumbnail {
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  @include xs {
+    .container {
+      .news_textbox {
+        width: 100%;
+        p {
+          margin-top: 2rem;
+          margin-bottom: 3rem;
+        }
+      }
+      .news_articles {
+        grid-template-columns: 1fr;
+        .thumbnail {
+          height: 34rem;
+        }
+        .articles_content {
+          margin-top: 3rem;
+          margin-bottom: 4rem;
+        }
+        .articles_tit {
+          margin-bottom: 1rem;
+          &::after {
+            bottom: 4rem;
+          }
+        }  
+      }
+    }
+  }
+}
+
+@include md {
+  .mini_slider {
+    display: none;
+  }
+}
+//news ends
+
+//mini slider starts
+
+//accordion 
+.accordion {
+  margin-top: 5rem;
+  .card {
+    box-shadow: 0px 0px 20px #d4d4d4;
+    &-header {
+      position: relative;
+      h3 {
+        cursor: pointer;
+        background: $yellow-cl;
+        @include text(1.8rem, $pn-bold, 2.4rem, $white-cl, capitalize);
+        margin: 0;
+        padding: 2rem 2rem;
+        @include transition($t);
+        &:hover {
+          background: $yellow-dark-cl;
+        }
+      }
+      span {
+        font-size: 18px;
+        color: $white-cl;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        @include transform(translateY(-50%));
+      }
+    }
+    &-content {
+      display: none;
+      padding: 2rem;
+    }
+  }
+}
+
+.mini_slider {
+  margin-top: 9rem;
+  overflow: hidden;
+  position: relative;
+  &-item {
+    position: absolute;
+    margin: 0 1rem;
+    img {
+      max-width: initial;
+      height: 40rem;
+    }
+  }
+}
+//mini slider ends

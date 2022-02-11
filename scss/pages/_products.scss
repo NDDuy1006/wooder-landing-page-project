@@ -1,0 +1,340 @@
+//products starts
+.products {
+  padding-top: 9rem;
+  .--reverse {
+    margin-top: 9rem;
+  }
+  @include md {
+    padding-top: 5rem;
+    .product_item {
+      margin-top: 5rem;
+    }
+    .product_img {
+      max-width: 100%;
+    }
+    .--reverse {
+      margin-top: 4.5rem;
+      .product_text {
+        margin-left: 24px;
+        h3 {
+          &::before {
+            left: 30rem;
+          }
+        }
+      }
+    }
+  }
+  @include sm {
+    .product_item {
+      .product_img {
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .product_text {
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 10px;
+    }
+    .product_text-title {
+      &::before {
+        display: none;
+      }
+    }
+    .--reverse {
+      .product_text {
+        max-width: 29rem;
+        h3 {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include xs {
+    .product_item {
+      // padding-top: 5.2rem;
+      flex-direction: column;
+      align-items: center;
+      .product_text {
+        max-width: 29rem;
+      }
+      .product_img {
+        width: 100%;
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .--reverse {
+      .product_text {
+        max-width: 50rem;
+        text-align: left;
+      }
+    }
+  }
+}
+.product_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .product_img {
+    img {
+      height: 100%;
+    }
+  }
+}
+.product_text {
+  margin-top: 5rem;
+  margin-left: 9.6rem;
+  max-width: 29.6rem;
+  .product_text-title {
+    @include text(4rem, $pn-bold, null, $black-cl, uppercase);
+    letter-spacing: 0.12rem;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8.2rem;
+      height: 0.175rem;
+      background: $yellow-cl;
+      left: -10rem;
+      bottom: 1.3rem;
+    }
+  }
+  p {
+    @include text(1.6rem, $pn-reg, 22px, $gray-cl, normal);
+    letter-spacing: 0.4px;
+    margin-top: 24px;
+  }
+  a {
+    position: relative;
+    padding-bottom: 5px;
+    @include text(1.4rem, $pn-bold, 5.8rem, $black-cl, uppercase);
+    letter-spacing: 0.32rem;
+    @include transition($t);
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4rem;
+      height: 0.2rem;
+      background-color: $yellow-cl;
+      left: 0px;
+      bottom: -9px;
+      cursor: context-menu;
+    }
+    &:hover {
+      color: $yellow-cl;
+    }
+    img {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.--reverse {
+  // padding-top: 9.2rem;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  .product_text {
+    margin-left: 6.6rem;
+    max-width: 37rem;
+    text-align: right;
+  }
+  .product_img {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h3 {
+    @include text(4rem, $pn-bold, null, $black-cl, uppercase);
+    letter-spacing: 0.12rem;
+    position: relative;
+    margin-right: 9rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8.2rem;
+      height: 0.175rem;
+      background: $yellow-cl;
+      left: 30rem;
+      bottom: 1.3rem;
+    }
+  }
+}
+
+.quality {
+  margin-top: 7.5rem;
+  padding-bottom: 9.8rem;
+  .qual_item {
+    cursor: pointer;
+  }
+  .qual_text {
+    max-width: 48.5rem;
+    margin: auto;
+    text-align: center;
+  }
+  h3 {
+    @include text(4rem, $pn-bold, null, $black-cl, uppercase);
+    letter-spacing: 1.12px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4rem;
+      height: 2px;
+      background-color: $yellow-cl;
+      bottom: -14px;
+      left: 22rem;
+    }
+  }
+  p {
+    @include text(16px, $pn-reg, 20.86px, $black-cl, normal);
+    letter-spacing: 0.32;
+    margin-top: 24px;
+  }
+
+  @include md {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding-bottom: 0;
+    .qual_showcase {
+      flex-direction: column;
+      align-items: center;
+      .qual_item {
+        margin-bottom: 5rem;
+      }
+      .showcase_title {
+        margin-top: 3rem;
+      }
+    }
+  }
+  @include sm {
+    .qual_showcase {
+      margin-top: 4rem;
+    }
+  }
+}
+.qual_showcase {
+  margin-top: 6.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h3 {
+    @include text(16px, $pn-reg, null, $black-cl, normal);
+  }
+  .vid_img {
+    position: relative;
+    border: 5px solid #e5e5e5;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 20.5rem;
+    width: 20.5rem;
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+  .play_vid {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    @include mid(true);
+    z-index: 20;
+  }
+  .fas {
+    font-size: 3rem;
+    color: $white-cl;
+    padding: 2rem;
+    border-radius: 100%;
+    background-color: $yellow-cl-opa;
+    @include transition($t);
+  }
+  .showcase_title {
+    margin-top: 4.5rem;
+    text-align: center;
+    .qual_tit {
+      @include text(16px, $pn-bold, 20px, $black-cl, capitalize);
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 3rem;
+        height: 2px;
+        background-color: $yellow-cl;
+        left: 9rem;
+        bottom: 34px;
+      }
+    }
+  }
+}
+
+//products ends
+
+//popup videos
+.popup-video {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 125;
+  .iframe-wrapper {
+    background: $black-cl;
+    border: 5px solid #eee;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100%;
+    margin: auto;
+    top: 50%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .close {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 2rem;
+    background: $white-cl;
+    z-index: 126;
+    .fa-times {
+      @include mid;
+    }
+  }
+}
